@@ -1,9 +1,9 @@
 package service;
 
-import dto.Book;
+import dto.BookDTO;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface BookService {
-    Book getBookById(int id);
+    BookDTO getBookById(int id);
 }

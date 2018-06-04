@@ -1,14 +1,14 @@
 package dao.impl;
 
 import dao.BookDao;
-import domain.Book;
+import domain.BookDAO;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.IOException;
 
 
-public class BookDaoImplTest {
+public class BookDAODTODaoImplTest {
 
     public static BookDao bookDao;
 
@@ -23,8 +23,8 @@ public class BookDaoImplTest {
 
     @Test
     public void testSelect(){
-        Book book = bookDao.getBookById(1);
-        System.out.println(book.getName());
+        BookDAO bookDAO = bookDao.getBookById(1);
+        System.out.println(bookDAO.getName());
     }
 
 }

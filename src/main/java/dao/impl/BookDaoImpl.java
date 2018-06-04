@@ -1,7 +1,7 @@
 package dao.impl;
 
 import dao.BookDao;
-import domain.Book;
+import domain.BookDAO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -25,22 +25,22 @@ public class BookDaoImpl implements BookDao  {
     public BookDaoImpl() throws IOException {
     }
 
-    public Book getBookById(int id) {
+    public BookDAO getBookById(int id) {
         SqlSession session =sqlSessionFactory.openSession();
         try {
 
-            Book book = session.selectOne(namespace+".selectById",id);
-            return book;
+            BookDAO bookDAO = session.selectOne(namespace+".selectById",id);
+            return bookDAO;
         }finally {
             session.close();
         }
     }
 
-    public List<Book> getAll() {
+    public List<BookDAO> getAll() {
         return null;
     }
 
-    public boolean addBook(Book book) {
+    public boolean addBook(BookDAO bookDAO) {
         return false;
     }
 }

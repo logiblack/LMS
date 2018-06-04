@@ -3,16 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="book">
-    <insert id="insert" parameterType="domain.Book">
+    <insert id="insert" parameterType="domain.BookDAO">
         INSERT INTO book(name, cover, isbn, author, tag_id, status, price)
          VALUES (#{name},#{cover},#{isbn},#{author},#{tagId},#{status},#{price})
     </insert>
 
-    <select id="selectById" parameterType="int" resultType="domain.Book">
+    <select id="selectById" parameterType="int" resultType="domain.BookDAO">
         SELECT * FROM book WHERE id = #{id}
     </select>
 
-    <select id="selectAll" resultType="domain.Book">
+    <select id="selectAll" resultType="domain.BookDAO">
         SELECT * FROM book
     </select>
 </mapper>

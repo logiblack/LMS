@@ -3,7 +3,7 @@ package dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Book {
+public class BookDTO {
     private String name;
     private String cover;
     private String isbn;

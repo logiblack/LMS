@@ -12,6 +12,7 @@
                 <property name="url" value="jdbc:mysql://localhost:3306/lms?serverTimezone=UTC"/>
                 <property name="username" value="root"/>
                 <property name="password" value="uBd38gdgab"/>
+                <property name="password" value="990126"/>
             </dataSource>
         </environment>
     </environments>

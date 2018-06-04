@@ -3,7 +3,7 @@ package domain;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Book {
+public class BookDAO {
 
   private int id;
   private String name;
@@ -76,7 +76,6 @@ public class Book {
   public void setStatus(String status) {
     this.status = status;
   }
-
 
   public double getPrice() {
     return price;
