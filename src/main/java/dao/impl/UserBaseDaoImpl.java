@@ -1,7 +1,7 @@
 package dao.impl;
 
-import dao.BookDao;
-import domain.BookDomain;
+import dao.UserBaseDao;
+import dto.UserBaseDto;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,36 +10,33 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 @Repository
-public class BookDaoImpl implements BookDao  {
-
+public class UserBaseDaoImpl implements UserBaseDao {
     private String resource = "mybatis/mybatis-config.xml";
     private InputStream inputStream = Resources.getResourceAsStream(resource);
+
     private SqlSessionFactory sqlSessionFactory =
             new SqlSessionFactoryBuilder().build(inputStream);
 
-    private String namespace = "book";
+    private String namespace = "users_base";
+    public UserBaseDaoImpl() throws IOException {
 
-    public BookDaoImpl() throws IOException {
     }
-
-    public BookDomain getBookById(int id) {
-        SqlSession session = sqlSessionFactory.openSession();
+    public void save(UserBaseDto user) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
-            BookDomain bookDomain = session.selectOne(namespace+".selectById",id);
-            return bookDomain;
-        }finally {
-            session.close();
+            sqlSession.insert(namespace + ".save", user);
+        } finally {
+            sqlSession.close();
         }
     }
 
-    public List<BookDomain> getAll() {
-        return null;
+    public void update(UserBaseDto newInfo) {
+
     }
 
-    public boolean addBook(BookDomain bookDomain) {
-        return false;
+    public void updatepwd(String pwd) {
+
     }
 }

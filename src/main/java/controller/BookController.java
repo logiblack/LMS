@@ -1,12 +1,9 @@
 package controller;
 
-import dto.BookDTO;
+import dto.BookDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import service.impl.BookServiceImpl;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 public class BookController {
@@ -20,8 +17,8 @@ public class BookController {
 
     @RequestMapping("/book/{id}")
     @ResponseBody
-    public BookDTO getBookInfo(@PathVariable int id){
-        BookDTO dto = bookServiceImpl.getBookById(id);
+    public BookDto getBookInfo(@PathVariable int id){
+        BookDto dto = bookServiceImpl.getBookById(id);
         System.out.println(dto.getName());
         return dto;
     }

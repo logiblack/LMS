@@ -3,7 +3,7 @@ package domain;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BookDAO {
+public class BookDomain {
 
   private int id;
   private String name;

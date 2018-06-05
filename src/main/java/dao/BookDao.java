@@ -1,13 +1,13 @@
 package dao;
 
-import domain.BookDAO;
+import domain.BookDomain;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public interface BookDao {
-    BookDAO getBookById(int id);
-    List<BookDAO> getAll();
-    boolean addBook(BookDAO bookDAO);
+    BookDomain getBookById(int id);
+    List<BookDomain> getAll();
+    boolean addBook(BookDomain bookDomain);
 }

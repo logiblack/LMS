@@ -8,10 +8,11 @@
         <environment id="dev">
             <transactionManager type="MANAGED"/>
             <dataSource type="POOLED">
+
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/lms?serverTimezone=UTC"/>
-                <property name="username" value="root"/>
-                <property name="password" value="uBd38gdgab"/>
+                <property name="name" value="root"/>
+                <!--<property name="pwd" value="uBd38gdgab"/>-->
                 <property name="password" value="990126"/>
             </dataSource>
         </environment>
@@ -19,6 +20,7 @@
 
     <mappers>
         <mapper resource="mybatis/mapper/book-mapper.xml"/>
+        <mapper resource="mybatis/mapper/user-mapper.xml"/>
     </mappers>
 
 </configuration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users_base">
+    <insert id="save" keyColumn="id" parameterType="dto.UserBaseDto">
+        INSERT INTO users_base(id, user_name, pwd, sex, nick_name, email)
+        VALUES(#{id},#{username},#{pwd},#{sex},#{nickname},#{email});
+    </insert>
+
+    <update id="user_update" parameterType="dto.UserBaseDto">
+        UPDATE users_base SET user_name=#{username}, sex=#{sex}, nick_name=#{nickname}, email=#{email};
+    </update>
+
+    <update id="update_pwd" parameterType="String">
+        UPDATE users_base SET pwd=#{pwd};
+    </update>
+</mapper>

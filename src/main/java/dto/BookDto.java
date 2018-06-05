@@ -3,7 +3,8 @@ package dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BookDTO {
+public class BookDto {
+    private int id;
     private String name;
     private String cover;
     private String isbn;
@@ -57,5 +58,13 @@ public class BookDTO {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
