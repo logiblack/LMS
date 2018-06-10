@@ -7,7 +7,6 @@ public class UserBaseDomain {
     private int id;
     private String username;
     private String pwd;
-    private String nickname;
     private String sex;
     private String email;
 
@@ -25,14 +24,6 @@ public class UserBaseDomain {
 
     public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
     }
 
     public String getPwd() {

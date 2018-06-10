@@ -4,15 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="users_base">
     <insert id="save" keyColumn="id" parameterType="dto.UserBaseDto">
-        INSERT INTO users_base(id, user_name, pwd, sex, nick_name, email)
-        VALUES(#{id},#{username},#{pwd},#{sex},#{nickname},#{email});
+        INSERT INTO users_base(id, username, pwd, sex, email)
+        VALUES(#{id},#{username},#{pwd},#{sex},#{email});
     </insert>
 
-    <update id="user_update" parameterType="dto.UserBaseDto">
-        UPDATE users_base SET user_name=#{username}, sex=#{sex}, nick_name=#{nickname}, email=#{email};
+    <update id="update_user" parameterType="dto.UserBaseDto">
+        UPDATE users_base SET username=#{username}, sex=#{sex}, email=#{email};
     </update>
 
-    <update id="update_pwd" parameterType="String">
-        UPDATE users_base SET pwd=#{pwd};
+    <update id="update_pwd" parameterType="dto.UserBaseDto">
+        UPDATE users_base SET pwd=#{pwd} WHERE id=#{id};
     </update>
+
+    <select id="selectByName" parameterType="String" resultType="dto.UserBaseDto">
+        SELECT * FROM users_base WHERE username=#{username};
+    </select>
+
+
 </mapper>

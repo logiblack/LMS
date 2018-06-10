@@ -24,10 +24,8 @@ public class UserControllerTest {
     @Test
     public void test(){
         UserBaseDto dto = new UserBaseDto();
-        dto.setName("wuye");
+        dto.setUsername("wuye");
         dto.setPwd("12345678");
-        dto.setNickname("lloo");
-        dto.setNickname("xiaozi");
         dto.setEmail("1814727278@qq.com");
         controller.register(dto);
     }
